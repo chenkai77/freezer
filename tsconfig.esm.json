@@ -1,0 +1,8 @@
+{
+  "files": [],
+  "references": [
+    {
+      "path": "./packages/components/tsconfig.esm.json"
+    }
+  ]
+}

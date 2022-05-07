@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "jsx": "preserve",
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "esModuleInterop": true,
+    "importHelpers": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "target": "esnext",
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "lib": ["ESNext", "DOM", "DOM.Iterable", "ScriptHost"]
+  },
+  "include": [
+    "packages",
+    "docs",
+  ],
+  "exclude": ["node_modules"]
+}

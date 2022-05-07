@@ -1,9 +1,10 @@
 {
-  "name": "freezer-ui",
+  "name": "@freezer-ui/components",
   "version": "0.0.1",
-  "description": "A component library for Vue 3",
+  "description": "all components",
   "main": "index.js",
   "author": "chen-kai",
+  "types": "index.d.ts",
   "peerDependencies": {
     "vue": "^3.2.33"
   }

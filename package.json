@@ -3,6 +3,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "@freezer-ui/components": "workspace:*",
     "vue": "^3.2.33"
+  },
+  "devDependencies": {
+    "@babel/types": "^7.17.10",
+    "esno": "^0.14.1"
   }
 }

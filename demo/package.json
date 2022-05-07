@@ -1,5 +1,5 @@
 {
-  "name": "docs",
+  "name": "@freezer-ui/demo",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@vitejs/plugin-vue": "^2.3.2",
     "vite": "^2.9.8"
   }
 }

@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "strictNullChecks": true,
+    "jsx": "preserve",
+    "jsxFactory": "h",
+    "jsxFragmentFactory": "Fragment",
+    "noImplicitAny": true,
+    "noUnusedLocals": false,
+    "moduleResolution": "Node",
+    "declaration": true,
+    "forceConsistentCasingInFileNames": true,
+    "composite": true,
+    "esModuleInterop": true,
+    "lib": ["ESNext", "DOM"],
+    
+    "outDir": "../es",
+    "module": "ES6",
+    "target": "ES6",
+  },
+}
