@@ -5,3 +5,4 @@ export const packagesRoot = resolve(projectRoot, "packages");
 
 // output
 export const buildDist = resolve(projectRoot, "dist");
+export const buildDistEsm = resolve(buildDist, "es");
