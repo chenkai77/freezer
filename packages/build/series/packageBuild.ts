@@ -1,6 +1,6 @@
 import { rollup } from "rollup";
 import { excludeFiles } from "../utils";
-import { packagesRoot, buildDistEsm } from "../../utils/paths";
+import { packagesRoot, buildDistEsm } from "../../../utils/paths";
 import fg from "fast-glob";
 
 import vue from "@vitejs/plugin-vue";

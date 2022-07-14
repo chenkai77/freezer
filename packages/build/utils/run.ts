@@ -1,5 +1,5 @@
 import { spawn } from "child_process";
-import { projectRoot } from "../../utils/paths";
+import { projectRoot } from "../../../utils/paths";
 
 const run = (command: string, cwd: string = projectRoot) =>
   new Promise<void>((resolve, reject) => {

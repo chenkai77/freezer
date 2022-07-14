@@ -1,9 +1,11 @@
 {
   "scripts": {
+    "init": "pnpm -F @freezer-ui/build run build",
     "build": "pnpm run -C build build",
-    "clean": "rimraf dist"
+    "commander-test": "freezer-ui-build test"
   },
   "dependencies": {
+    "@freezer-ui/build": "workspace:*",
     "@freezer-ui/components": "workspace:*",
     "vue": "^3.2.33"
   },
