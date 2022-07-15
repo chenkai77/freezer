@@ -1,8 +1,9 @@
 import { Command } from "commander";
+import buildVueComponent from './scripts/build-vue-component'
 
 const program = new Command();
 
-program.version("1.0.0").name("freezer-ui-build").usage("command [options]");
+program.name("freezer-ui-build").usage("command [options]");
 
 program
   .command("test")
@@ -10,5 +11,11 @@ program
   .action(() => {
     console.log("hello world");
   });
+
+program
+  .command("build:vue:component")
+  .action(() => {
+    buildVueComponent()
+  });  
 
 program.parse(process.argv);

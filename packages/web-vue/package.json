@@ -9,7 +9,10 @@
     "vue": "^3.1.0"
   },
   "scripts": {
-    "commander-test": "freezer-ui-build test"
+    "commander-test": "freezer-ui-build test",
+    "build": "freezer-ui-build build:vue:component"
   },
-  "dependencies": {}
+  "devDependencies": {
+    "@freezer-ui/build": "workspace:*"
+  }
 }

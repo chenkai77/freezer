@@ -1,11 +1,10 @@
 {
   "scripts": {
     "init": "pnpm -F @freezer-ui/build run build",
-    "build": "pnpm run -C build build",
+    "build": "pnpm run -C packages/web-vue build",
     "commander-test": "freezer-ui-build test"
   },
   "dependencies": {
-    "@freezer-ui/build": "workspace:*",
     "vue": "^3.2.33"
   },
   "devDependencies": {
