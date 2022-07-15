@@ -1,0 +1,15 @@
+{
+  "name": "@freezer-ui/web-vue",
+  "version": "0.0.1",
+  "description": "web vue",
+  "main": "index.js",
+  "author": "chen-kai",
+  "types": "index.d.ts",
+  "peerDependencies": {
+    "vue": "^3.1.0"
+  },
+  "scripts": {
+    "commander-test": "freezer-ui-build test"
+  },
+  "dependencies": {}
+}

@@ -6,7 +6,6 @@
   },
   "dependencies": {
     "@freezer-ui/build": "workspace:*",
-    "@freezer-ui/components": "workspace:*",
     "vue": "^3.2.33"
   },
   "devDependencies": {
