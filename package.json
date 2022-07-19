@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "@babel/types": "^7.17.10",
+    "@freezer-ui/build": "workspace:*",
     "@types/node": "^17.0.31",
     "consola": "^2.15.3",
     "esno": "^0.14.1",

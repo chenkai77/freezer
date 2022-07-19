@@ -2,7 +2,7 @@
   "compilerOptions": {
     "sourceMap": true,
     "outDir": "dist",
-    "module": "CommonJS",
+    "module": "ESNext",
     "target": "ES2015",
     "allowJs": true,
     "moduleResolution": "node",
