@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "init": "pnpm -F @freezer-ui/build run build",
+    "init": "pnpm -F @freezer-ui/build run tsc",
     "build": "pnpm run -C packages/web-vue build",
     "commander-test": "freezer-ui-build test"
   },
@@ -13,7 +13,6 @@
     "@types/node": "^17.0.31",
     "consola": "^2.15.3",
     "esno": "^0.14.1",
-    "rimraf": "^3.0.2",
     "sucrase": "^3.21.0"
   }
 }

@@ -1,32 +1,39 @@
-// import fs from 'fs-extra';
+import fs from 'fs-extra';
 import path from 'path'
 import { rollup } from "rollup";
 import vue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
 import typescript from 'rollup-plugin-typescript2';
 
+const commonWriteOption = {
+  sourcemap: true,
+  entryFileNames: `[name].js`,
+  preserveModules: true,
+  preserveModulesRoot: path.resolve(process.cwd(), 'components'),
+  globals: {
+    vue: "Vue" 
+  }
+}
+
 async function buildVueComponent() {
-  
-
-
-  const inputPath = path.resolve(process.cwd(), 'components', 'index.ts')
+  await fs.emptyDir(path.resolve(process.cwd(), 'es'))
+  await fs.emptyDir(path.resolve(process.cwd(), 'lib'))
   try {
     const bundle = await rollup({
-      input: inputPath,
+      input: path.resolve(process.cwd(), 'components', 'index.ts'),
       plugins: [typescript(), vue({isProduction: true,}), vueJsx()],
       external: ['vue'],
     })
   
     await bundle.write({
+      ...commonWriteOption,
       format: "esm",
       dir: 'es',
-      sourcemap: true,
-      entryFileNames: `[name].js`,
-      preserveModules: true,
-      preserveModulesRoot: path.resolve(process.cwd(), 'components'),
-      globals: {
-        vue: "Vue" 
-      }
+    })
+    await bundle.write({
+      ...commonWriteOption,
+      format: "commonjs",
+      dir: 'lib',
     })
   } catch (error) {
     console.log(error) 

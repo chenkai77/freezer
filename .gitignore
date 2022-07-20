@@ -2,3 +2,5 @@ node_modules
 dist
 */node_modules
 */dist
+packages/web-vue/es
+packages/web-vue/lib
