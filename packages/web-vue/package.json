@@ -1,8 +1,7 @@
 {
   "name": "@freezer-ui/web-vue",
-  "version": "0.0.1",
+  "version": "1.0.3",
   "description": "web vue",
-  "main": "index.js",
   "author": "chen-kai",
   "types": "index.d.ts",
   "peerDependencies": {
@@ -12,7 +11,23 @@
     "commander-test": "freezer-ui-build test",
     "build": "freezer-ui-build build:vue:component"
   },
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "files": [
+    "es",
+    "lib"
+  ],
+  "sideEffects": [
+    "es/**/style/*",
+    "lib/**/style/*"
+  ],
   "devDependencies": {
     "@freezer-ui/build": "workspace:*"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "sucrase": "^3.24.0"
   }
 }

@@ -2,7 +2,7 @@
   "scripts": {
     "init": "pnpm -F @freezer-ui/build run tsc",
     "build": "pnpm run -C packages/web-vue build",
-    "commander-test": "freezer-ui-build test"
+    "update-version": "sucrase-node ./scripts/update-version.ts"
   },
   "dependencies": {
     "vue": "^3.2.33"

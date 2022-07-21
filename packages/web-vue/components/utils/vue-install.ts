@@ -1,12 +1,14 @@
-import type { Plugin } from "vue";
-type SFCWithInstall<T> = T & Plugin;
-type IComponent = { name: string };
+import type { Plugin, App, Component } from "vue";
+import { componentPrefix } from './config'
+type IComponent = Component & { name: string };
 
-export const withInstall = <T extends IComponent>(
-  main: T
-): SFCWithInstall<T> => {
-  (main as SFCWithInstall<T>).install = (app): void => {
-    app.component(main.name, main);
-  };
-  return main as SFCWithInstall<T>;
+export const withInstall = (
+  main: IComponent
+) => {
+  main = Object.assign(main, {
+    install: (app: App): void => {
+      app.component(componentPrefix + main.name, main);
+    }
+  })
+ return main;
 };

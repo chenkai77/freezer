@@ -1,6 +1,5 @@
-import Button from "./src/button.vue";
+import _Button from "./src/button.vue";
 import { withInstall } from "../utils/vue-install";
-const FrButton: any = withInstall(Button);
-export default FrButton;
+const Button = withInstall(_Button);
+export default Button;
 
-export * from "./src/button";
