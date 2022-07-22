@@ -1,1 +1,1 @@
-export const componentPrefix = 'fr'
+export const componentPrefix:string = 'fr'

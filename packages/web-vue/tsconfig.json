@@ -1,26 +1,16 @@
 {
   "compilerOptions": {
     "declaration": true,
-    "jsx": "preserve",
-    "allowSyntheticDefaultImports": true,
-    "baseUrl": ".",
-    "esModuleInterop": true,
-    "importHelpers": true,
-    "module": "esnext",
+    "outDir": "es",
+    "target": "ES2015",
+    "module": "ES2020",
     "moduleResolution": "node",
+    "removeComments": true,
     "strict": true,
-    "sourceMap": true,
-    "skipLibCheck": true,
-    "target": "esnext",
+    "noImplicitAny": false,
+    "allowJs": true,
     "isolatedModules": true,
-    "experimentalDecorators": true,
-    "paths": {
-      "@/*": ["src/*"]
-    },
-    "lib": ["ESNext", "DOM", "DOM.Iterable", "ScriptHost"],
-  },
-  "include": [
-    "components",
-    "*.d.ts",
-  ]
+    "esModuleInterop": true,
+    "jsx": "preserve"
+  }
 }
