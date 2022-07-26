@@ -5,6 +5,7 @@
     "update-version": "sucrase-node ./scripts/update-version.ts"
   },
   "dependencies": {
+    "@vue/compiler-sfc": "^3.2.37",
     "vue": "^3.2.33"
   },
   "devDependencies": {

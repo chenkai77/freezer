@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "declaration": true,
     "outDir": "es",
     "target": "ES2015",
     "module": "ES2020",
