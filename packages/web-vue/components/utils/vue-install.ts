@@ -1,14 +1,13 @@
 import type { Plugin, App, Component } from "vue";
 import { componentPrefix } from './config'
-type IComponent = Component & { name: string };
 
-export const withInstall:(p:IComponent)=>IComponent = (
-  main
+export const withInstall = <T extends { name:string }>(
+  main: T
 ) => {
-  main = Object.assign(main, {
+  let plugin: T & Plugin = Object.assign(main, {
     install: (app: App): void => {
       app.component(componentPrefix + main.name, main);
     }
   })
- return main;
+ return plugin;
 };

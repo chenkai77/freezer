@@ -1,5 +1,5 @@
 import { Command } from "commander";
-import buildVueComponent from './scripts/build-vue-component'
+import buildVueComponent from './scripts/build-vue-component/index'
 
 const program = new Command();
 

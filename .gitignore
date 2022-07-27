@@ -4,3 +4,4 @@ dist
 */dist
 packages/web-vue/es
 packages/web-vue/lib
+packages/web-vue/types

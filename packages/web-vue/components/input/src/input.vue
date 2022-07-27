@@ -5,6 +5,7 @@
 <script lang="ts">
 import { reactive, defineComponent, ref } from "vue";
 export default defineComponent({
+  name: 'Input',
   setup() {
     const testData = ref<string>('测试数据kai')
     return {

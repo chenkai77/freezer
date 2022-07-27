@@ -4,10 +4,11 @@ import path from 'path'
 import fs from 'fs-extra';
 import { parse } from '@vue/compiler-sfc';
 
-export async function generateTsType(){
+export default async function generateTsType(){
   const processCwd = process.cwd()
   const project = new Project({
     compilerOptions: {
+      outDir: path.resolve(processCwd, 'types'),
       allowJs: true,
       declaration: true,
       emitDeclarationOnly: true,
@@ -27,7 +28,6 @@ export async function generateTsType(){
     absolute: true,
     onlyFiles: true,
   })
-
   const sourceFiles:SourceFile[] = []
 
   await Promise.all(
