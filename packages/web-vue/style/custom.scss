@@ -1,0 +1,15 @@
+// Color
+$colors: () !default;
+$colors: map.deep-merge(
+  (
+    "white": #ffffff,
+    "black": #000000,
+    "primary": #00cd96,
+    "success": #00cd96,
+    "warning": #faad14,
+    "danger": #f56c6c,
+    "error": #f56c6c,
+    "info": #0076ff,
+  ),
+  $colors
+);
