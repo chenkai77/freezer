@@ -1,3 +1,5 @@
+@use 'sass:map';
+
 // Color
 $colors: () !default;
 $colors: map.deep-merge(
@@ -13,3 +15,5 @@ $colors: map.deep-merge(
   ),
   $colors
 );
+
+$color-primary: map.get($colors, 'primary') !default;

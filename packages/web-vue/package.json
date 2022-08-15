@@ -8,8 +8,8 @@
     "vue": "^3.1.0"
   },
   "scripts": {
-    "commander-test": "freezer-ui-build test",
-    "build": "freezer-ui-build build:vue:component"
+    "build": "freezer-ui-build build:vue:component",
+    "build:style": "freezer-ui-build build:vue:style"
   },
   "main": "lib/index.js",
   "module": "es/index.js",

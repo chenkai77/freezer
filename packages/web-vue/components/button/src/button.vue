@@ -6,7 +6,7 @@
 import { reactive, defineComponent } from "vue";
 export default defineComponent({
   name: 'Button',
-  setup() {},
+  setup() { },
 });
 </script>
-<style scoped></style>
+
