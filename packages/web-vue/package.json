@@ -1,6 +1,6 @@
 {
   "name": "@freezer-ui/web-vue",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "web vue",
   "author": "chen-kai",
   "types": "types/index.d.ts",
@@ -16,7 +16,8 @@
   "files": [
     "es",
     "lib",
-    "types"
+    "types",
+    "style"
   ],
   "sideEffects": [
     "es/**/style/*",

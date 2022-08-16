@@ -1,39 +1,46 @@
-import path from 'path'
+import path from "path";
 import { rollup } from "rollup";
 import vue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
-import typescript from 'rollup-plugin-typescript2';
-import nodeResolve from '@rollup/plugin-node-resolve'
+import typescript from "rollup-plugin-typescript2";
+import nodeResolve from "@rollup/plugin-node-resolve";
+import fs from "fs-extra";
 
 const commonWriteOption = {
   sourcemap: true,
   entryFileNames: `[name].js`,
   preserveModules: true,
-  preserveModulesRoot: path.resolve(process.cwd(), 'components'),
-}
+  preserveModulesRoot: path.resolve(process.cwd(), "components"),
+};
 
-
-export default async function rollupBuild(){
+export default async function rollupBuild() {
+  await fs.emptyDir(path.resolve(process.cwd(), "es"));
+  await fs.emptyDir(path.resolve(process.cwd(), "lib"));
   const bundle = await rollup({
-    input: path.resolve(process.cwd(), 'components', 'index.ts'),
-    plugins: [nodeResolve(), typescript(), vue({isProduction: true,}), vueJsx()],
-    external: ['vue'],
+    input: path.resolve(process.cwd(), "components", "index.ts"),
+    plugins: [
+      nodeResolve(),
+      typescript(),
+      vue({ isProduction: true }),
+      vueJsx(),
+    ],
+    external: ["vue"],
     onwarn(warning) {
-      if(warning.code === 'PREFER_NAMED_EXPORTS'){
-        return
+      if (warning.code === "PREFER_NAMED_EXPORTS") {
+        return;
       }
       console.warn(warning.message);
     },
-  })
+  });
 
   await bundle.write({
     ...commonWriteOption,
     format: "esm",
-    dir: 'es',
-  })
+    dir: "es",
+  });
   await bundle.write({
     ...commonWriteOption,
     format: "commonjs",
-    dir: 'lib',
-  })
+    dir: "lib",
+  });
 }

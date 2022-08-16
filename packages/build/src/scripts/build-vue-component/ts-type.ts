@@ -5,6 +5,7 @@ import fs from 'fs-extra';
 import { parse } from '@vue/compiler-sfc';
 
 export default async function generateTsType(){
+  await fs.emptyDir(path.resolve(process.cwd(), "types"));
   const processCwd = process.cwd()
   const project = new Project({
     compilerOptions: {

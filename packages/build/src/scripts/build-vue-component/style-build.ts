@@ -4,15 +4,22 @@ import path from "path";
 import fs from "fs-extra";
 
 export default async function styleBuild() {
+  await fs.emptyDir(path.resolve(process.cwd(), "style/dist"));
   const processCwd = process.cwd();
   const filePathList = await glob(["**/*.scss"], {
-    cwd: path.resolve(processCwd, "components"),
+    cwd: path.resolve(processCwd, "style"),
     onlyFiles: true,
+    ignore: ["common/*.scss"],
   });
-  console.log(filePathList);
+  fs.ensureDirSync(path.resolve(processCwd, "style/dist"));
   for (const filename of filePathList) {
-    const fileAbsolutePath = path.resolve(processCwd, `components/${filename}`);
+    const fileAbsolutePath = path.resolve(processCwd, `style/${filename}`);
     const result = await sass.compileAsync(fileAbsolutePath);
-    console.log(result);
+    const cssFilename = filename.replace(".scss", ".css");
+    fs.ensureFileSync(path.resolve(processCwd, `style/dist/${cssFilename}`));
+    fs.writeFileSync(
+      path.resolve(processCwd, `style/dist/${cssFilename}`),
+      result.css
+    );
   }
 }
