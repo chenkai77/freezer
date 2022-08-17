@@ -5,7 +5,7 @@ importers:
   .:
     specifiers:
       '@babel/types': ^7.17.10
-      '@freezer-ui/build': workspace:*
+      '@freezer-ui/freezer-scripts': workspace:*
       '@types/node': ^17.0.31
       '@vue/compiler-sfc': ^3.2.37
       consola: ^2.15.3
@@ -17,45 +17,13 @@ importers:
       vue: 3.2.33
     devDependencies:
       '@babel/types': 7.17.10
-      '@freezer-ui/build': link:packages/build
+      '@freezer-ui/freezer-scripts': link:packages/freezer-scripts
       '@types/node': 17.0.31
       consola: 2.15.3
       esno: 0.14.1
       sucrase: 3.21.0
 
-  build:
-    specifiers:
-      '@rollup/plugin-commonjs': ^22.0.0
-      '@rollup/plugin-node-resolve': ^13.3.0
-      '@vitejs/plugin-vue': ^2.3.2
-      '@vitejs/plugin-vue-jsx': ^1.3.10
-      commander: ^9.3.0
-      esbuild: ^0.14.38
-      fast-glob: ^3.2.11
-      rollup: ^2.72.1
-      rollup-plugin-esbuild: ^4.9.1
-      vite: ^2.9.8
-    devDependencies:
-      '@rollup/plugin-commonjs': 22.0.0_rollup@2.72.1
-      '@rollup/plugin-node-resolve': 13.3.0_rollup@2.72.1
-      '@vitejs/plugin-vue': 2.3.2_vite@2.9.8+vue@3.2.33
-      '@vitejs/plugin-vue-jsx': 1.3.10
-      commander: 9.3.0
-      esbuild: 0.14.38
-      fast-glob: 3.2.11
-      rollup: 2.72.1
-      rollup-plugin-esbuild: 4.9.1_esbuild@0.14.38+rollup@2.72.1
-      vite: 2.9.8
-
-  demo:
-    specifiers:
-      '@vitejs/plugin-vue': ^2.3.2
-      vite: ^2.9.8
-    dependencies:
-      '@vitejs/plugin-vue': 2.3.2_vite@2.9.8+vue@3.2.33
-      vite: 2.9.8
-
-  packages/build:
+  packages/freezer-scripts:
     specifiers:
       '@rollup/plugin-commonjs': ^22.0.0
       '@rollup/plugin-json': ^4.1.0
@@ -96,25 +64,26 @@ importers:
       typescript: 4.7.4
       vite: 2.9.8_sass@1.54.0
 
-  packages/components:
+  packages/freezer-vue-docs:
     specifiers:
-      '@freezer-ui/components': workspace:*
-    dependencies:
-      '@freezer-ui/components': 'link:'
-
-  packages/freezer-ui:
-    specifiers: {}
+      '@vitejs/plugin-vue': ^2.3.2
+      '@vitejs/plugin-vue-jsx': ^1.3.10
+      vite: ^2.9.8
+    devDependencies:
+      '@vitejs/plugin-vue': 2.3.2_vite@2.9.8+vue@3.2.33
+      '@vitejs/plugin-vue-jsx': 1.3.10
+      vite: 2.9.8
 
   packages/web-vue:
     specifiers:
-      '@freezer-ui/build': workspace:*
+      '@freezer-ui/freezer-scripts': workspace:*
       sass: ^1.54.0
       sucrase: ^3.24.0
     dependencies:
       sass: 1.54.0
       sucrase: 3.24.0
     devDependencies:
-      '@freezer-ui/build': link:../build
+      '@freezer-ui/freezer-scripts': link:../freezer-scripts
 
 packages:
 
@@ -578,6 +547,7 @@ packages:
     dependencies:
       vite: 2.9.8_sass@1.54.0
       vue: 3.2.33
+    dev: true
 
   /@vue/babel-helper-vue-transform-on/1.0.2:
     resolution: {integrity: sha512-hz4R8tS5jMn8lDq6iD+yWL6XNB699pGIVLk7WSJnn1dbpjaazsjZQkieJoRX6gW5zpYSCFqQ7jUquPNY65tQYA==}
@@ -919,6 +889,7 @@ packages:
     cpu: [x64]
     os: [android]
     requiresBuild: true
+    dev: true
     optional: true
 
   /esbuild-android-arm64/0.14.38:
@@ -927,6 +898,7 @@ packages:
     cpu: [arm64]
     os: [android]
     requiresBuild: true
+    dev: true
     optional: true
 
   /esbuild-darwin-64/0.14.38:
@@ -935,6 +907,7 @@ packages:
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
+    dev: true
     optional: true
 
   /esbuild-darwin-arm64/0.14.38:
@@ -943,6 +916,7 @@ packages:
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
+    dev: true
     optional: true
 
   /esbuild-freebsd-64/0.14.38:
@@ -951,6 +925,7 @@ packages:
     cpu: [x64]
     os: [freebsd]
     requiresBuild: true
+    dev: true
     optional: true
 
   /esbuild-freebsd-arm64/0.14.38:
@@ -959,6 +934,7 @@ packages:
     cpu: [arm64]
     os: [freebsd]
     requiresBuild: true
+    dev: true
     optional: true
 
   /esbuild-linux-32/0.14.38:
@@ -967,6 +943,7 @@ packages:
     cpu: [ia32]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /esbuild-linux-64/0.14.38:
@@ -975,6 +952,7 @@ packages:
     cpu: [x64]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /esbuild-linux-arm/0.14.38:
@@ -983,6 +961,7 @@ packages:
     cpu: [arm]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /esbuild-linux-arm64/0.14.38:
@@ -991,6 +970,7 @@ packages:
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /esbuild-linux-mips64le/0.14.38:
@@ -999,6 +979,7 @@ packages:
     cpu: [mips64el]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /esbuild-linux-ppc64le/0.14.38:
@@ -1007,6 +988,7 @@ packages:
     cpu: [ppc64]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /esbuild-linux-riscv64/0.14.38:
@@ -1015,6 +997,7 @@ packages:
     cpu: [riscv64]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /esbuild-linux-s390x/0.14.38:
@@ -1023,6 +1006,7 @@ packages:
     cpu: [s390x]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /esbuild-netbsd-64/0.14.38:
@@ -1031,6 +1015,7 @@ packages:
     cpu: [x64]
     os: [netbsd]
     requiresBuild: true
+    dev: true
     optional: true
 
   /esbuild-node-loader/0.6.5:
@@ -1045,6 +1030,7 @@ packages:
     cpu: [x64]
     os: [openbsd]
     requiresBuild: true
+    dev: true
     optional: true
 
   /esbuild-register/3.3.2_esbuild@0.14.38:
@@ -1061,6 +1047,7 @@ packages:
     cpu: [x64]
     os: [sunos]
     requiresBuild: true
+    dev: true
     optional: true
 
   /esbuild-windows-32/0.14.38:
@@ -1069,6 +1056,7 @@ packages:
     cpu: [ia32]
     os: [win32]
     requiresBuild: true
+    dev: true
     optional: true
 
   /esbuild-windows-64/0.14.38:
@@ -1077,6 +1065,7 @@ packages:
     cpu: [x64]
     os: [win32]
     requiresBuild: true
+    dev: true
     optional: true
 
   /esbuild-windows-arm64/0.14.38:
@@ -1085,6 +1074,7 @@ packages:
     cpu: [arm64]
     os: [win32]
     requiresBuild: true
+    dev: true
     optional: true
 
   /esbuild/0.14.38:
@@ -1113,6 +1103,7 @@ packages:
       esbuild-windows-32: 0.14.38
       esbuild-windows-64: 0.14.38
       esbuild-windows-arm64: 0.14.38
+    dev: true
 
   /escalade/3.1.1:
     resolution: {integrity: sha512-k0er2gUkLf8O0zKJiAhmkTnJlTvINGv7ygDNPbeIsX/TJjGJZHuh9B2UxbsaEkmlEo9MfhrSzmhIlhRlI2GXnw==}
@@ -1203,6 +1194,7 @@ packages:
 
   /function-bind/1.1.1:
     resolution: {integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==}
+    dev: true
 
   /gensync/1.0.0-beta.2:
     resolution: {integrity: sha512-3hN7NaskYvMDLQY55gnW3NQ+mesEAepTqlg+VEbj7zzqEMBVNhzcGYYeqFo/TlYz6eQiFcp1HcsCZO+nGgS8zg==}
@@ -1255,6 +1247,7 @@ packages:
     engines: {node: '>= 0.4.0'}
     dependencies:
       function-bind: 1.1.1
+    dev: true
 
   /hash-sum/2.0.0:
     resolution: {integrity: sha512-WdZTbAByD+pHfl/g9QSsBIIwy8IT+EsPiKDs0KNX+zSHhdDLFKdZu0BQHljvO+0QI/BasbMSUa8wYNCZTvhslg==}
@@ -1302,6 +1295,7 @@ packages:
     resolution: {integrity: sha512-+5FPy5PnwmO3lvfMb0AsoPaBG+5KHUI0wYFXOtYPnVVVspTFUuMZNfNaNVRt3FZadstu2c8x23vykRW/NBoU6A==}
     dependencies:
       has: 1.0.3
+    dev: true
 
   /is-extglob/2.1.1:
     resolution: {integrity: sha512-SbKbANkN603Vi4jEZv49LeVJMn4yGwsbzZworEoyEiutsN3nJYdbO36zfhGJ6QEDpOZIFkDtnq5JRxmvl3jsoQ==}
@@ -1497,6 +1491,7 @@ packages:
 
   /path-parse/1.0.7:
     resolution: {integrity: sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==}
+    dev: true
 
   /picocolors/1.0.0:
     resolution: {integrity: sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==}
@@ -1542,6 +1537,7 @@ packages:
       is-core-module: 2.9.0
       path-parse: 1.0.7
       supports-preserve-symlinks-flag: 1.0.0
+    dev: true
 
   /reusify/1.0.4:
     resolution: {integrity: sha512-U9nH88a3fc/ekCF1l0/UP1IosiuIjyTh7hBvXVMHYgVcfGvt897Xguj2UOLDeI5BG2m7/uwyaLVT6fbtCwTyzw==}
@@ -1587,6 +1583,7 @@ packages:
     hasBin: true
     optionalDependencies:
       fsevents: 2.3.2
+    dev: true
 
   /run-parallel/1.2.0:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}
@@ -1681,6 +1678,7 @@ packages:
   /supports-preserve-symlinks-flag/1.0.0:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
+    dev: true
 
   /svg-tags/1.0.0:
     resolution: {integrity: sha512-ovssysQTa+luh7A5Weu3Rta6FJlFBBbInjOh722LIt6klpU2/HtdUbszju/G4devcvk8PGt7FCLv5wftu3THUA==}
@@ -1755,6 +1753,7 @@ packages:
       rollup: 2.72.1
     optionalDependencies:
       fsevents: 2.3.2
+    dev: true
 
   /vite/2.9.8_sass@1.54.0:
     resolution: {integrity: sha512-zsBGwn5UT3YS0NLSJ7hnR54+vUKfgzMUh/Z9CxF1YKEBVIe213+63jrFLmZphgGI5zXwQCSmqIdbPuE8NJywPw==}

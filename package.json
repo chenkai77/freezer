@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "init": "pnpm -F @freezer-ui/build run tsc",
+    "init": "pnpm -F @freezer-ui/freezer-scripts run tsc",
     "build": "pnpm run -C packages/web-vue build",
     "update-version": "sucrase-node ./scripts/update-version.ts"
   },
@@ -10,7 +10,7 @@
   },
   "devDependencies": {
     "@babel/types": "^7.17.10",
-    "@freezer-ui/build": "workspace:*",
+    "@freezer-ui/freezer-scripts": "workspace:*",
     "@types/node": "^17.0.31",
     "consola": "^2.15.3",
     "esno": "^0.14.1",

@@ -24,7 +24,7 @@
     "lib/**/style/*"
   ],
   "devDependencies": {
-    "@freezer-ui/build": "workspace:*"
+    "@freezer-ui/freezer-scripts": "workspace:*"
   },
   "publishConfig": {
     "access": "public"
